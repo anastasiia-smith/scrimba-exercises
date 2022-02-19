@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="stylesheet" href="styles/styles.css"> -->
+  <title>Exercises</title>
+</head>
+<body>
+  <div>
+    <h1>Metric/Imperial unit conversion</h1>
+    <input id="input" type="number" min="0" value="0">
+    <h2> Length (Meter/Feet)</h2>   
+    <p id="lengthParagraph">0 meters = 0.000 feet | 0 feet = 0.000 meters</p> 
+    <h2>Volume (Liters/Gallons)</h2>
+    <p id="volumeParagraph">0 liters = 0.000 gallons | 0 gallons = 0.000 liters</p>  
+    <h2>Mass (Kilograms/Pounds)</h2> 
+    <p id="massParagraph">0 kilos = 0.000 pounds | 0 pounds = 0.000 kilos</p> 
+  </div>
+  <hr />
+  <div>
+    <h1>Generate a random password<h1>
+    <button id="generate">Generate passwords</button>
+    <input id="passwordLength" type="number" value="8">
+    <input onclick="copyText(this)" class="password" type="text" value=" ">
+    <input onclick="copyText(this)" class="password" type="text" value=" ">
+    <input onclick="copyText(this)" class="password" type="text" value=" ">
+    <input onclick="copyText(this)" class="password" type="text" value=" ">
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
