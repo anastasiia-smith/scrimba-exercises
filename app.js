@@ -8,9 +8,9 @@ const massParagraph = document.getElementById("massParagraph");
 input.addEventListener('change', updateValues);
 
 function updateValues(){
-  lengthParagraph.textContent = `${input.value} meters = ${metersToFeet(this.value)} feet | ${input.value} feet = ${feetToMeters(this.value)} meters`;
-  volumeParagraph.textContent = `${input.value} liters = ${litersToGallons(this.value)} gallons | ${input.value} gallons = ${gallonsToLiters(this.value)} liters`;
-  massParagraph.textContent = `${input.value} kilos = ${killogramsToPounds(this.value)} pounds | ${input.value} pounds = ${poundsToKillograms(this.value)} kilos`
+  lengthParagraph.innerHTML = `${input.value} meters = ${metersToFeet(this.value)} feet | ${input.value} feet = ${feetToMeters(this.value)} meters`;
+  volumeParagraph.innerHTML = `${input.value} liters = ${litersToGallons(this.value)} gallons | ${input.value} gallons = ${gallonsToLiters(this.value)} liters`;
+  massParagraph.innerHTML = `${input.value} kilos = ${killogramsToPounds(this.value)} pounds | ${input.value} pounds = ${poundsToKillograms(this.value)} kilos`
 }
 
 function metersToFeet(meters) {
