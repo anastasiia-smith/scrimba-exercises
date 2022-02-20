@@ -4,30 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-  <link rel="stylesheet" href="styles/styles.css"> -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">-->
+  <link rel="stylesheet" href="styles.css"> 
   <title>Exercises</title>
 </head>
 <body>
+  <h1>Exercises from scrimba</h1>
   <div>
-    <h1>Metric/Imperial unit conversion</h1>
+    <h2>Metric/Imperial unit conversion</h2>
     <input id="input" type="number" min="0" value="0">
-    <h2> Length (Meter/Feet)</h2>   
+    <h3> Length (Meter/Feet)</h3>   
     <p id="lengthParagraph">0 meters = 0.000 feet | 0 feet = 0.000 meters</p> 
-    <h2>Volume (Liters/Gallons)</h2>
+    <h3>Volume (Liters/Gallons)</h3>
     <p id="volumeParagraph">0 liters = 0.000 gallons | 0 gallons = 0.000 liters</p>  
-    <h2>Mass (Kilograms/Pounds)</h2> 
+    <h3>Mass (Kilograms/Pounds)</h3> 
     <p id="massParagraph">0 kilos = 0.000 pounds | 0 pounds = 0.000 kilos</p> 
   </div>
   <hr />
   <div>
-    <h1>Generate a random password<h1>
+    <h2>Generate a random password<h2>
     <button id="generate">Generate passwords</button>
     <input id="passwordLength" type="number" value="8">
     <input onclick="copyText(this)" class="password" type="text" value=" ">
     <input onclick="copyText(this)" class="password" type="text" value=" ">
     <input onclick="copyText(this)" class="password" type="text" value=" ">
     <input onclick="copyText(this)" class="password" type="text" value=" ">
+  </div>
+  <hr />
+  <div>
+    <h2>Invoice creator</h2>
+    <p>Thanks for choosing GoodCorp, LLC!</p>
+    <button class="addToInvoice" value="Wash Car,10">Wash Car: $10</button>
+    <button class="addToInvoice" value="Mow Lawn,20">Mow Lawn: $20</button>
+    <button class="addToInvoice" value="Pull Weeds,30">Pull Weeds: $30</button>
+    <div class="invoice-container">
+      <h3>TASK</h3>
+      <h3>TOTAL</h3>
+      <ul class="two-rows" id="list"></ul>
+      <h3>NOTES</h3>
+      <h3>TOTAL AMOUNT</h3>
+      <p> We accept cash, credit card, or PayPal</p>
+      <div>$<span id="totalAmount">0</span></div>
+      <button onclick="removeAll()" id="send" class="two-rows">Send invoice</button>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>

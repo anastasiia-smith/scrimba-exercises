@@ -70,3 +70,56 @@ function copyText(elem) {
   elem.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(elem.value);
 }
+
+//invoice creator
+
+const buttons = document.getElementsByClassName("addToInvoice");
+const totalAmount = document.getElementById("totalAmount");
+const list = document.getElementById("list");
+const send = document.getElementById("send");
+
+let tasksArray = JSON.parse(localStorage.getItem("tasksArray")) || [];
+
+for (let i = 0; i < tasksArray.length; i++) {
+  const charIndex = tasksArray[i].search(",");
+  const name = tasksArray[i].slice(0, charIndex);
+  const price = tasksArray[i].slice(charIndex + 1, tasksArray[i].length);
+
+  countTotal(price);
+
+  list.innerHTML += `<li>${name}: <button value="${tasksArray[i]}" onclick="removeTask(this)">Remove</button>$${price}</li>`;
+}
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', addTask);
+}
+
+function addTask() {
+  if (tasksArray.includes(this.value)) {
+    return;
+  } else {
+    const charIndex = this.value.search(",");
+    const name = this.value.slice(0, charIndex);
+    const price = this.value.slice(charIndex + 1, this.value.length);
+    list.innerHTML += `<li>${name}: <button value="${this.value}" onclick="removeTask(this)">Remove</button>$${price}</li>`;
+    countTotal(price);
+    tasksArray.push(this.value);
+    localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
+  }
+}
+
+function removeTask(elem) {
+  elem.parentElement.remove()
+}
+
+function countTotal(price) {
+  let total = parseInt(totalAmount.textContent) + parseInt(price);
+  totalAmount.textContent = total;
+}
+
+function removeAll() {
+  list.innerHTML = "";
+  totalAmount.textContent = 0;
+  localStorage.clear();
+  tasksArray = [];
+}

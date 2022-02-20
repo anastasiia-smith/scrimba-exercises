@@ -1,0 +1,14 @@
+.invoice-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 65%;
+}
+.two-rows {
+  grid-column-start: 1;
+    grid-column-end: 3;
+}
+#list {
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+}
