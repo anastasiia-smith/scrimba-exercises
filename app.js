@@ -109,7 +109,11 @@ function addTask() {
 }
 
 function removeTask(elem) {
-  elem.parentElement.remove()
+  localStorage.clear();
+  const index = tasksArray.indexOf(elem.value);
+  tasksArray.splice(index, 1);
+  elem.parentElement.remove();
+  localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
 }
 
 function countTotal(price) {
