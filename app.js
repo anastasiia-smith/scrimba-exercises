@@ -111,9 +111,13 @@ function addTask() {
 function removeTask(elem) {
   localStorage.clear();
   const index = tasksArray.indexOf(elem.value);
+  const charIndex = elem.value.search(",");
+  const price = elem.value.slice(charIndex + 1, elem.value.length);
   tasksArray.splice(index, 1);
   elem.parentElement.remove();
   localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
+  let total = parseInt(totalAmount.textContent) - parseInt(price);
+  totalAmount.textContent = total;
 }
 
 function countTotal(price) {
