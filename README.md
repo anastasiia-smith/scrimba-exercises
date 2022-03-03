@@ -1,4 +1,4 @@
-# JS exercises from scrimba.com course
+# Exercises from scrimba.com JS course
 
 Briefly went through the JS course to refresh all javascript basics.
 
